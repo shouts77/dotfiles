@@ -9,7 +9,15 @@ let g:startify_custom_header = 'startify#pad(startify#fortune#quote())'
 
 
 " showing first page when all buffer was deleted
-autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+function! s:show_startify_on_empty()
+    if empty(filter(tabpagebuflist(), '!buflisted(v:val)'))
+        if exists(':Startify')
+            Startify
+        endif
+    endif
+endfunction
+
+autocmd BufDelete * call s:show_startify_on_empty()
 
 " stratify list order
 let g:startify_lists = [
