@@ -1,11 +1,12 @@
-# dotfiles
+# Ubuntu dotfiles
 
-개인 개발 환경 설정 파일 모음입니다.
+vim 및 vim plugin,  neovim 등 개발 환경 설정 파일 모음입니다.
 
 ---
 
 # PowerShell dotfiles
 
+PowerShell Profile, neovim 등 개발 환경 설정 파일 모음입니다.
 
 ## 📁 구성
 
