@@ -44,3 +44,23 @@ Set-Alias vim nvim
 
 # Set ll alias
 function ll { Get-ChildItem -Force }
+
+# Codex Project path 이동 설정
+function codex {
+    $workspace = "C:\Users\HYU\Documents\99_claude_projects"
+    Set-Location $workspace
+
+    # Load .env
+    $envFile = Join-Path $workspace ".env"
+    if (Test-Path $envFile) {
+        Get-Content $envFile | ForEach-Object {
+            if ($_ -match "^\s*([^#][^=]+)=(.*)$") {
+                $name = $matches[1].Trim()
+                $value = $matches[2].Trim()
+                Set-Item -Path "Env:$name" -Value $value
+            }
+        }
+    }
+
+    & "C:\nvm4w\nodejs\codex.cmd" @args
+}
