@@ -29,8 +29,11 @@ function wiki_cd {
     Set-Location "C:\Users\HYU\Documents\999_sym\obsidian-memo\llm-wiki"
     }
 
-# LLM Wiki Claude Code 실행
+# LLM Wiki Claude Code 실행 (GitHub에서 최신 변경사항 pull 후 실행)
 function wiki {
+    Set-Location "C:\Users\HYU\Documents\999_sym\obsidian-memo"
+    Write-Host "Pulling latest changes from GitHub..." -ForegroundColor Cyan
+    git pull origin main
     Set-Location "C:\Users\HYU\Documents\999_sym\obsidian-memo\llm-wiki"
     & "C:\Users\HYU\.local\bin\claude.exe" @args
     }
