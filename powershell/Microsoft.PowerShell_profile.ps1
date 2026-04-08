@@ -15,17 +15,17 @@ chcp 65001 | Out-Null
 $env:EDITOR = "nvim"
 
 # Obsidian path 이동 설정
-function obs_cd {
+function obscd {
     Set-Location "C:\Users\HYU\Documents\999_sym\obsidian-memo"
     }
 
 # Claude Code Projects path 이동 설정
-function ccp_cd {
+function ccpcd {
     Set-Location "C:\Users\HYU\Documents\99_claude_projects"
     }
 
 # LLM Wiki path 이동 설정
-function wiki_cd {
+function wikicd {
     Set-Location "C:\Users\HYU\Documents\999_sym\obsidian-memo\llm-wiki"
     }
 
